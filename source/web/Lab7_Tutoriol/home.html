@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="place">
+<head >
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-route.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="app.js"></script>
+
+    <style>
+        body {
+            background: url('http://cdn.paper4pc.com/images/batman-the-dark-knight-wallpaper-1.jpg') no-repeat fixed center center;
+            background-color: #665851;
+            background-size: cover;
+            font-size: 16px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            margin: 0;
+            color: #666;
+        }
+        #button1, #button2, #button4 {
+            border: none;
+            background: lightblue;
+            cursor: pointer;
+            border-radius: 3px;
+            padding: 6px;
+            width: 100px;
+            color: white;
+            margin-left: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        #button3 {
+            border: none;
+            background: lightblue;
+            cursor: pointer;
+            border-radius: 3px;
+            padding: 6px;
+            width: 100px;
+            color: white;
+
+            margin-left: 100px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+        }
+        #input_place, #createPlace, #place  {
+            background: transparent url(http://html-generator.weebly.com/files/theme/input-text-8.png) repeat-x;
+            border: 1px solid #999;
+            outline:0;
+            margin-left: 25px;
+            height:25px;
+            width: 150px;
+        }
+
+
+
+
+
+        #centerDiv{
+            width:800px;
+            border-radius: 5px;
+            /*background:#ccc;*/
+            padding:10px;
+            height:50px;
+            position:absolute;
+            margin-top:-25px;
+            margin-left:-400px;
+            top:10%;
+            left:60%;}
+    </style>
+</head>
+
+<body>
+
+<div id="centerDiv" ng-controller="homeController">
+
+    <div style="padding-bottom: 20px">
+
+        <!--<select style="width: 280px; padding-bottom: 20px" ng-model="selectedPlace.place" id="place"  value="{{selector.place.label}}" ng-options="selector.place as selector.place for selector in selectors"></select>-->
+        <select style="width: 260px; margin-left: 20px" ng-model="selectedCity.place" id="selectedCity"  value="{{selector.place.label}}" ng-options="selector.place as selector.place for selector in selectors">Choose cities</select>
+        <!--<button id="button1">Submit</button>-->
+    </div>
+
+    <div>
+        <input type="text" id="place">
+        <button id="button4" ng-click="update()">Update</button>
+    </div>
+
+    <div>
+        <input type="text" id="createPlace" ng-model="user.place">
+        <button id="button2" ng-click="Create(user)">Create</button>
+    </div>
+    <div>
+        <button id="button3"  ng-click="remove1()">Delete</button>
+
+    </div>
+</div>
+</body>
+</html>
